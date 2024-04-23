@@ -50,6 +50,7 @@ function App() {
   return (
     <SidebarLayout>
       <>
+        asdasdasdasdsa
         <img src={Background} alt="background" className="background" />
         <div
           className="drop-area"
