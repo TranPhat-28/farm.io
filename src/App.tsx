@@ -51,6 +51,7 @@ function App() {
     <SidebarLayout>
       <>
         asdasdasdasdsa
+        12213
         <img src={Background} alt="background" className="background" />
         <div
           className="drop-area"
