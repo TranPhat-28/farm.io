@@ -1,4 +1,4 @@
-import { Coordinate } from "./types";
+import { Coordinate } from "../types";
 
 export const ramdomozeCoordinate = (): Coordinate => {
     const xList = [15, 30, 45, 60, 75, 90];

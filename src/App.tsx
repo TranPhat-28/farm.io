@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { Farm } from "./components";
 import { SidebarLayout } from "./layouts";
 

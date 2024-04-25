@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { Coordinate, Pet } from '../types';
-import { ramdomozeCoordinate } from '../helpers';
+import { ramdomozeCoordinate } from '../utilities/helpers';
 
 interface IUsePetStore {
   petsInStock: Pet[],
