@@ -1,11 +1,19 @@
 import "./style.scss";
 import { type ISidebarLayout, SidebarType } from "./types";
-import { VisitSidebar, SidebarB, SidebarC } from "../../components";
-import { useState } from "react";
+import {
+  DashboardSidebar,
+  PetSidebar,
+  SidebarB,
+  SidebarC,
+  Navigation
+} from "../../components";
+import { useEffect, useState } from "react";
+import { setPetsInStock, setPetsInFarm } from "../../redux/features/petSlice";
+import { useDispatch } from "react-redux";
 
 export const SidebarLayout = ({ children }: ISidebarLayout) => {
   const [sidebarType, setSidebarType] = useState<SidebarType>(
-    SidebarType.VISIT
+    SidebarType.DASHBOARD
   );
   const [hideSidebar, setHideSidebar] = useState<boolean>(false);
 
@@ -19,6 +27,17 @@ export const SidebarLayout = ({ children }: ISidebarLayout) => {
   const toggleSidebar = () => {
     setHideSidebar((state) => !state);
   };
+
+  const [hideSidebar, setHideSidebar] = useState<boolean>(false);
+
+  useEffect(() => {
+    dispatch(
+      setPetsInStock([{ id: "pet-1" }, { id: "pet-2" }, { id: "pet-3" }])
+    );
+    dispatch(
+      setPetsInFarm([{ id: "pet-4" }, { id: "pet-5" }, { id: "pet-6" }])
+    );
+  }, []);
 
   return (
     <div className="sidebar-layout">
