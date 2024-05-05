@@ -1,6 +1,6 @@
-import { Coordinate } from "../types";
+import { ICoordinate } from "../types";
 
-export const randomizeCoordinate = (): Coordinate => {
+export const randomizeCoordinate = (): ICoordinate => {
   const xList = [15, 30, 45, 60, 75, 90];
   const yList = [15, 30, 45, 60, 75, 90];
 
