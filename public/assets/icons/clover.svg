@@ -18,7 +18,7 @@
 		</linearGradient>
 	</defs>
 	<style>
-		.s0 { fill: #ffffff } 
+		.s0 { fill: transparent } 
 		.s1 { fill: url(#g1) } 
 		.s2 { fill: url(#g2) } 
 		.s3 { fill: url(#g3) } 

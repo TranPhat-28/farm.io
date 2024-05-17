@@ -1,13 +1,15 @@
 export enum Specie {
-  RED = "red",
-  LEMON = "lemon",
-  ICEYE = "iceye",
+  RED = "Red",
+  LEMON = "Lemon",
+  ICEYE = "Iceye",
 }
 
 export interface IPet {
   id: string;
   specie: Specie;
   isOwned: boolean;
+  isReleased?: boolean;
+  description: string;
 }
 
 export interface ICoordinate {

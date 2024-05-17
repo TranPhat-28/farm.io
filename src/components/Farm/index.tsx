@@ -10,7 +10,6 @@ export const Farm = () => {
   const dispatch = useDispatch();
   return (
     <div className="farm">
-      <img src="assets/backgrounds/background.svg" alt="background" />
       {petsInFarm.map((pet, index) => {
         return (
           <div
