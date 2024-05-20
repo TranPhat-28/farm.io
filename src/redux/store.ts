@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "../redux/features/authSlice";
-import petReducer from "../redux/features/petSlice";
+import authReducer from "./features/authSlice";
+import petReducer from "./features/petSlice";
+import sidebarReducer from "./features/sidebarSlice";
 
 export const store = configureStore({
   reducer: {
     authUser: authReducer,
     pet: petReducer,
+    sidebar: sidebarReducer,
   },
 });
 

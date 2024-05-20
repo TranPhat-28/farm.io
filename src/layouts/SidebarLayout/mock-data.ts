@@ -1,5 +1,5 @@
-import { IPet } from "../../types";
-import { Specie } from "../../types/pet";
+import { IPet } from "../../interfaces";
+import { Specie } from "../../interfaces/IPet";
 
 export const PETS_IN_STOCK: IPet[] = [
   {

@@ -3,7 +3,7 @@ import type { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { moveToStock } from "../../redux/features/petSlice";
 import { Rex, Lemon, Iceye } from "../../pets";
-import { Specie } from "../../types";
+import { Specie } from "../../interfaces";
 
 export const Farm = () => {
   const petsInFarm = useSelector((state: RootState) => state.pet.petsInFarm);

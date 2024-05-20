@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ICoordinate, IPet, IPetState } from "../../types";
+import { ICoordinate, IPet, IPetState } from "../../interfaces";
 import { randomizeCoordinate } from "../../utilities/helpers";
 
 const initialState: IPetState = {

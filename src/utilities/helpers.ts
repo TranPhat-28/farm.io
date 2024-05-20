@@ -1,4 +1,4 @@
-import { ICoordinate, Specie } from "../types";
+import { ICoordinate, Specie } from "../interfaces";
 import { Rex, Lemon, Iceye } from "../pets";
 
 export const randomizeCoordinate = (): ICoordinate => {

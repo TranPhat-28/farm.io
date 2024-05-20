@@ -2,7 +2,7 @@ import "./style.scss";
 import type { RootState } from "../../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { moveToFarm } from "../../redux/features/petSlice";
-import { IPet } from "../../types";
+import { IPet } from "../../interfaces";
 import { useState } from "react";
 import { getPetCompBySpecie } from "../../utilities/helpers";
 
