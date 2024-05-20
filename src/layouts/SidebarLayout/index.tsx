@@ -3,8 +3,6 @@ import { type ISidebarLayout, SidebarType } from "./types";
 import {
   DashboardSidebar,
   PetSidebar,
-  SidebarB,
-  SidebarC,
   Navigation,
 } from "../../components";
 import { useEffect } from "react";
@@ -28,8 +26,6 @@ export const SidebarLayout = ({ children }: ISidebarLayout) => {
       <div className={`sidebar-wrapper ${visible ? "" : "hide"}`}>
         {type === SidebarType.DASHBOARD && <DashboardSidebar />}
         {type === SidebarType.PET && <PetSidebar />}
-        {type === SidebarType.B && <SidebarB />}
-        {type === SidebarType.C && <SidebarC />}
       </div>
 
       {children}

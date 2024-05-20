@@ -54,6 +54,7 @@
 
       .reward {
         background: white;
+        cursor: pointer;
         border-radius: 15px;
         padding: 5px;
         display: flex;
@@ -81,7 +82,7 @@
         }
 
         &.available {
-          border: 3px solid rgb(var(--primary));
+          border: 2px solid rgb(var(--primary));
         }
       }
     }
@@ -139,6 +140,7 @@
 
       .farm {
         color: #00b13c;
+        background: none;
       }
 
       .warning {

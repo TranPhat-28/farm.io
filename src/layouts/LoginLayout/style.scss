@@ -1,0 +1,27 @@
+.login__page-body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/backgrounds/background.png");
+    display: grid;
+    place-items: center;
+
+    .login__container {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+            height: 150px;
+        }
+
+        button {
+            background-color: gray;
+        }
+
+        span {
+            text-align: center;
+        }
+    }
+}

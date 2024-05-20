@@ -1,13 +1,12 @@
 import "./style.scss";
-import { AnnouncementType, IAnnouncement } from "./types";
+import { AnnouncementType, DailyReward, IAnnouncement } from "./types";
 import { ANNOUNCEMENTS, DAILY_REWARDS } from "./mock-data";
 
 export const DashboardSidebar = () => {
-  const todayIndex = new Date().getDay();
   return (
     <div className="dashboard-sidebar">
       <div className="top-line">
-        <span className="welcome-msg">Welcome, Beetiga</span>
+        <span className="welcome-msg">Welcome Player!</span>
         <div className="logo">
           <img src="logo.svg" alt="logo" className="image" />
           <span className="name">
@@ -20,18 +19,7 @@ export const DashboardSidebar = () => {
         <p className="title">Daily Rewards</p>
         <div className="content">
           {DAILY_REWARDS.map((reward, index) => (
-            <div
-              className={`reward ${
-                index < todayIndex
-                  ? "expired"
-                  : index == todayIndex
-                  ? "available"
-                  : "upcoming"
-              }`}
-              key={index}>
-              <img src={reward.imageUrl} alt={reward.name} />
-              <span className="date">{reward.date}</span>
-            </div>
+            <DailyReward index={index} reward={reward} />
           ))}
         </div>
       </section>
@@ -78,5 +66,22 @@ const Announcement = ({ type, message }: IAnnouncement) => {
       )}
       {" " + message}
     </p>
+  );
+};
+
+const DailyReward = ({ index, reward }: { index: number, reward: DailyReward; }) => {
+  const todayIndex = new Date().getDay();
+  return (
+    <div
+      className={`reward ${index < todayIndex
+        ? "expired"
+        : index == todayIndex
+          ? "available"
+          : "upcoming"
+        }`}
+      key={index}>
+      <img src={reward.imageUrl} alt={reward.name} />
+      <span className="date">{reward.date}</span>
+    </div>
   );
 };
