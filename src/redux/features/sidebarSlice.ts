@@ -3,7 +3,7 @@ import { ISidebarState } from "../../interfaces";
 import { SidebarType } from "../../layouts/SidebarLayout/types";
 
 const initialState: ISidebarState = {
-    visible: false,
+    visible: true,
     type: SidebarType.DASHBOARD,
 };
 
