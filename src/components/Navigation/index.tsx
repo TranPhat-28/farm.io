@@ -1,36 +1,29 @@
-import { Dispatch, SetStateAction } from "react";
 import { SidebarType } from "../../layouts/SidebarLayout/types";
+import { useDispatch } from "react-redux";
+import { changeSidebar, toggleSidebar } from "../../redux/features/sidebarSlice";
+import "./style.scss";
 
-export const Navigation = ({ setSidebarType, toggleSidebar, hideSidebar }: { setSidebarType: Dispatch<SetStateAction<SidebarType>>, toggleSidebar: () => void, hideSidebar: boolean; }) => {
+export const Navigation = () => {
 
-    const handleSetSidebarType = (sidebarType: SidebarType) => {
-        setSidebarType(sidebarType);
-        if (hideSidebar) {
-            toggleSidebar();
-        }
-    };
+    const dispatch = useDispatch();
 
     return (
         <div className="function-list">
-            <button
-                className="function"
-                onClick={() => handleSetSidebarType(SidebarType.DASHBOARD)}>
-                a
+            <button className="function"
+                onClick={() => dispatch(toggleSidebar())}>
+                X
             </button>
-            <button
-                className="function"
-                onClick={() => handleSetSidebarType(SidebarType.PET)}>
-                b
+            <button className="function"
+                onClick={() => dispatch(changeSidebar(SidebarType.DASHBOARD))}>
+                A
             </button>
-            <button
-                className="function"
-                onClick={() => handleSetSidebarType(SidebarType.B)}>
-                c
+            <button className="function"
+                onClick={() => dispatch(changeSidebar(SidebarType.B))}>
+                B
             </button>
-            <button
-                className="function"
-                onClick={() => handleSetSidebarType(SidebarType.C)}>
-                d
+            <button className="function"
+                onClick={() => dispatch(changeSidebar(SidebarType.C))}>
+                C
             </button>
         </div>
     );

@@ -7,21 +7,16 @@ import {
   SidebarC,
   Navigation,
 } from "../../components";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { setPetsInStock, setPetsInFarm } from "../../redux/features/petSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { PETS_IN_FARM, PETS_IN_STOCK } from "./mock-data";
+import { RootState } from "../../redux/store";
 
 export const SidebarLayout = ({ children }: ISidebarLayout) => {
+  // Redux
   const dispatch = useDispatch();
-
-  const [sidebarType, setSidebarType] = useState<SidebarType>(SidebarType.PET);
-
-  const toggleSidebar = () => {
-    setHideSidebar((state) => !state);
-  };
-
-  const [hideSidebar, setHideSidebar] = useState<boolean>(false);
+  const { visible, type } = useSelector((state: RootState) => state.sidebar);
 
   useEffect(() => {
     dispatch(setPetsInStock(PETS_IN_STOCK));
@@ -30,26 +25,16 @@ export const SidebarLayout = ({ children }: ISidebarLayout) => {
 
   return (
     <div className="sidebar-layout">
-      <div className={`sidebar-wrapper ${hideSidebar ? "hide" : ""}`}>
-        {sidebarType === SidebarType.DASHBOARD && <DashboardSidebar />}
-        {sidebarType === SidebarType.PET && <PetSidebar />}
-        {sidebarType === SidebarType.B && <SidebarB />}
-        {sidebarType === SidebarType.C && <SidebarC />}
-
-        <div
-          className={`toggle-btn ${hideSidebar ? "hide" : ""}`}
-          onClick={toggleSidebar}>
-          <div className="arrow"></div>
-        </div>
+      <div className={`sidebar-wrapper ${visible ? "" : "hide"}`}>
+        {type === SidebarType.DASHBOARD && <DashboardSidebar />}
+        {type === SidebarType.PET && <PetSidebar />}
+        {type === SidebarType.B && <SidebarB />}
+        {type === SidebarType.C && <SidebarC />}
       </div>
 
       {children}
 
-      <Navigation
-        setSidebarType={setSidebarType}
-        toggleSidebar={toggleSidebar}
-        hideSidebar={hideSidebar}
-      />
+      <Navigation />
     </div>
   );
 };
