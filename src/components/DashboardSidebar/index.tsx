@@ -19,7 +19,7 @@ export const DashboardSidebar = () => {
         <p className="title">Daily Rewards</p>
         <div className="content">
           {DAILY_REWARDS.map((reward, index) => (
-            <DailyReward index={index} reward={reward} />
+            <DailyRewardComp index={index} reward={reward} />
           ))}
         </div>
       </section>
@@ -69,7 +69,7 @@ const Announcement = ({ type, message }: IAnnouncement) => {
   );
 };
 
-const DailyReward = ({ index, reward }: { index: number, reward: DailyReward; }) => {
+const DailyRewardComp = ({ index, reward }: { index: number, reward: DailyReward; }) => {
   const todayIndex = new Date().getDay();
   return (
     <div
