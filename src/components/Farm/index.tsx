@@ -10,31 +10,30 @@ export const Farm = () => {
   const dispatch = useDispatch();
   return (
     <div className="farm">
-      {petsInFarm.map((pet, index) => {
-        return (
-          <div
-            key={index}
-            className="pet"
-            style={{
-              position: "absolute",
-              top: pet.y + "%",
-              left: pet.x + "%",
-              transform: "translate(-50%, -50%)",
-            }}
-            onClick={() => dispatch(moveToStock(pet))}>
-            {(() => {
-              switch (pet.specie) {
-                case Specie.RED:
-                  return <Rex />;
-                case Specie.LEMON:
-                  return <Lemon />;
-                case Specie.ICEYE:
-                  return <Iceye />;
-              }
-            })()}
-          </div>
-        );
-      })}
+      <img className="background" src="assets/backgrounds/background.png" alt="background" />
+      {petsInFarm.map((pet, index) => (
+        <div
+          key={index}
+          className="pet"
+          style={{
+            position: "absolute",
+            top: pet.y + "%",
+            left: pet.x + "%",
+            transform: "translate(-50%, -50%)",
+          }}
+          onClick={() => dispatch(moveToStock(pet))}>
+          {(() => {
+            switch (pet.specie) {
+              case Specie.RED:
+                return <Rex />;
+              case Specie.LEMON:
+                return <Lemon />;
+              case Specie.ICEYE:
+                return <Iceye />;
+            }
+          })()}
+        </div>
+      ))}
     </div>
   );
 };
